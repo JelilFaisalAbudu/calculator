@@ -3,33 +3,33 @@ import Big from 'big.js';
 const operate = (numberOne, numberTwo, operation) => {
   const numOne = new Big(numberOne);
   const numTwo = new Big(numberTwo);
-  let answer;
+  let result;
 
   switch (operation) {
     case '+':
-      answer = numOne.plus(numTwo);
+      result = numOne.plus(numTwo);
       break;
 
     case '-':
-      answer = numOne.minus(numTwo);
+      result = numOne.minus(numTwo);
       break;
 
-    case 'x':
-      answer = numOne.times(numTwo);
+    case 'X':
+      result = numOne.times(numTwo);
       break;
 
     case '/':
-      answer = numOne.div(numTwo);
+      result = numOne.div(numTwo);
       break;
 
     case '%':
-      answer = numOne.mod(numTwo);
+      result = numOne.mod(numTwo);
       break;
 
     default:
   }
 
-  return answer;
+  return result;
 };
 
 export default operate;
