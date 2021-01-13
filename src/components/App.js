@@ -5,13 +5,36 @@ import ButtonPanel from './ButtonPanel';
 /* eslint-disable no-unused-vars */
 import calculate from '../logic/calculate';
 
-function App() {
-  return (
-    <div>
-      <Display result="23" />
-      <ButtonPanel />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(buttonName) {
+    const { total, next, operation } = this.state;
+
+    this.setState(calculate({ total, next, operation }, buttonName));
+  }
+
+  render() {
+    const { total, next, operation } = this.state;
+    const result = `${total}${operation}${next}`.replace(/null/g, '');
+
+    return (
+      <div className="App">
+        <Display result={result || undefined} />
+        <ButtonPanel clickHandler={this.handleClick} />
+      </div>
+    );
+  }
 }
 
 export default App;
