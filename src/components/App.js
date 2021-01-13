@@ -26,13 +26,8 @@ class App extends React.Component {
 
   render() {
     const { total, next, operation } = this.state;
-    let result = total || next;
+    const result = `${total}${operation}${next}`.replace(/null/g, '');
 
-    if (total && next && operation) {
-      result = `${total} ${operation} ${next}`;
-    } else if (total && operation) {
-      result = `${total} ${operation}`;
-    }
     return (
       <div className="App">
         <Display result={result || undefined} />
