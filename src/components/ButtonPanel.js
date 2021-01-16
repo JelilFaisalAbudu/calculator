@@ -1,44 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
+import buttonPanelStyles from '../styles/button-panel.module.css';
 
 function ButtonPanel(props) {
   const handleClick = buttonName => props.clickHandler(buttonName);
+  const defaultStyles = {
+    bgColor: '#e3913e',
+  };
 
   return (
-    <div className="button-panel">
-      <div className="button-group">
+    <div className={buttonPanelStyles['button-panel']}>
+      <div className={buttonPanelStyles['button-group']}>
         <Button name="AC" clickHandler={handleClick} />
         <Button name="+/-" clickHandler={handleClick} />
         <Button name="%" clickHandler={handleClick} />
-        <Button name="÷" clickHandler={handleClick} />
+        <Button name="÷" clickHandler={handleClick} bgColor={defaultStyles.bgColor} />
       </div>
 
-      <div className="button-group">
+      <div className={buttonPanelStyles['button-group']}>
         <Button name="7" clickHandler={handleClick} />
         <Button name="8" clickHandler={handleClick} />
         <Button name="9" clickHandler={handleClick} />
-        <Button name="x" clickHandler={handleClick} />
+        <Button name="x" clickHandler={handleClick} bgColor={defaultStyles.bgColor} />
       </div>
 
-      <div className="button-group">
+      <div className={buttonPanelStyles['button-group']}>
         <Button name="4" clickHandler={handleClick} />
         <Button name="5" clickHandler={handleClick} />
         <Button name="6" clickHandler={handleClick} />
-        <Button name="-" clickHandler={handleClick} />
+        <Button name="-" clickHandler={handleClick} bgColor={defaultStyles.bgColor} />
       </div>
 
-      <div className="button-group">
+      <div className={buttonPanelStyles['button-group']}>
         <Button name="1" clickHandler={handleClick} />
         <Button name="2" clickHandler={handleClick} />
         <Button name="3" clickHandler={handleClick} />
-        <Button name="+" clickHandler={handleClick} />
+        <Button name="+" clickHandler={handleClick} bgColor={defaultStyles.bgColor} />
       </div>
 
-      <div className="button-group">
-        <Button name="0" clickHandler={handleClick} />
+      <div className={buttonPanelStyles['button-group']}>
+        <Button name="0" clickHandler={handleClick} wide />
         <Button name="." clickHandler={handleClick} />
-        <Button name="=" clickHandler={handleClick} />
+        <Button name="=" clickHandler={handleClick} bgColor={defaultStyles.bgColor} />
       </div>
     </div>
   );
