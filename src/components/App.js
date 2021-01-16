@@ -20,9 +20,14 @@ const App = () => {
   const renderResult = `${total}${operation}${next}`.replace(/null/g, '');
 
   return (
-    <div className="App">
-      <Display result={renderResult || undefined} />
-      <ButtonPanel clickHandler={handleClick} />
+    <div className="app">
+      <div
+        className="calculator-board"
+        style={{ width: 700 }}
+      >
+        <Display result={renderResult || undefined} />
+        <ButtonPanel clickHandler={handleClick} />
+      </div>
     </div>
   );
 };
