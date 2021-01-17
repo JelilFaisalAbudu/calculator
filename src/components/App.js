@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-
+import appStyles from '../styles/app.module.css';
 import calculate from '../logic/calculate';
 
 const App = () => {
@@ -20,7 +20,8 @@ const App = () => {
   const renderResult = `${total}${operation}${next}`.replace(/null/g, '');
 
   return (
-    <div className="app">
+    <div className={appStyles.app}>
+      <p className={appStyles.heading}>Let&apos;s do some math!</p>
       <div
         className="calculator-board"
         style={{ width: 700 }}
