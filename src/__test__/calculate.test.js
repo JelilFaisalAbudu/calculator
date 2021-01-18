@@ -53,4 +53,9 @@ describe('Calculator Module', () => {
     const calcObjects = { total: null, next: null, operation: null };
     expect(calculate(calcObjects, '23')).toEqual({ total: null, next: '23', operation: null });
   });
+
+  test('clears the screen when AC button clicked', () => {
+    const calcObjects = { total: '1', next: '2', operation: '+' };
+    expect(calculate(calcObjects, 'AC')).toEqual({ total: null, next: null, operation: null });
+  });
 });
