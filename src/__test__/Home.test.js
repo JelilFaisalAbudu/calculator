@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Home from '../components/Home';
 
 describe('Home Component', () => {
-  test('renders the title text of the Home page', ()=> {
+  test('renders the title text of the Home page', () => {
     const { getByText } = render(<Home />);
     const title = getByText('Welcome to our Page!');
 
