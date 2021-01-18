@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import App from '../components/App';
 
 describe('App', () => {
-  test('renders app component', () => {
+  test('renders intro text app component', () => {
     render(<App />);
     const textNode = screen.getByText('Let\'s do some math!');
     expect(textNode).toBeInTheDocument();
